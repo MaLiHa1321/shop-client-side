@@ -1,5 +1,5 @@
 
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import './App.css'
 import { useState } from 'react'
 
@@ -38,6 +38,9 @@ function App() {
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
             <button onClick={() => handleDelete(product._id)} className="btn btn-primary">Delete</button>
+            <Link to={`/updateshop/${product._id}`}>
+            <button className="btn btn-primary">Update</button>
+            </Link>
           </div>
         </div>
       </div>)

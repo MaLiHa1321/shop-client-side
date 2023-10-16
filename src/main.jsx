@@ -10,6 +10,7 @@ import Mainlayout from './component/Mainlayout.jsx';
 import Addshop from './pages/Addshop.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import UpdateShop from './pages/UpdateShop.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
        {
         path: '/register',
         element: <Register></Register>
+       },
+       {
+        path: '/updateshop/:id',
+        element: <UpdateShop></UpdateShop>,
+        loader: ({params})=> fetch(`http://localhost:5000/shop/${params.id}`)
        }
     ]
   },
