@@ -8,6 +8,22 @@ function App() {
   const loadedData = useLoaderData()
   const [products,setProduct] = useState(loadedData)
 
+  const handleDelete = id =>{
+   fetch(`http://localhost:5000/shop/${id}`,{
+    method: 'DELETE'
+   })
+   .then(res => res.json())
+   .then(data =>{
+    console.log(data)
+    if(data.deletedCount > 0){
+      alert("product is delete successfully")
+      const remaing = products.filter(product => product._id !== id)
+      setProduct(remaing)
+
+    }
+   })
+  }
+
 
   return (
     <>
@@ -21,6 +37,7 @@ function App() {
           <p>{product.quantity}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
+            <button onClick={() => handleDelete(product._id)} className="btn btn-primary">Delete</button>
           </div>
         </div>
       </div>)
