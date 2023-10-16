@@ -11,6 +11,7 @@ import Addshop from './pages/Addshop.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import UpdateShop from './pages/UpdateShop.jsx';
+import AuthProvider from './provide/AuthProvider.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +46,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
+
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
