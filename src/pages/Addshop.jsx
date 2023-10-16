@@ -19,7 +19,13 @@ const Addshop = () => {
             body: JSON.stringify(newProduct)
         })
         .then(res => res.json())
-        .then(err => console.log(err))
+        .then(data =>{
+            console.log(data)
+            if(data.insertedId){
+                alert('product added successful')
+                form.reset()
+            }
+        })
     }
     return (
         <div>
