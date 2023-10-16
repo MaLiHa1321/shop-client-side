@@ -12,6 +12,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import UpdateShop from './pages/UpdateShop.jsx';
 import AuthProvider from './provide/AuthProvider.jsx';
+import UserDetails from './pages/UserDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         path: '/updateshop/:id',
         element: <UpdateShop></UpdateShop>,
         loader: ({params})=> fetch(`http://localhost:5000/shop/${params.id}`)
+       },
+       {
+        path: '/userDetails',
+        element: <UserDetails></UserDetails>,
+        loader: () => fetch('http://localhost:5000/users')
        }
     ]
   },

@@ -8,6 +8,7 @@ const Navbar = () => {
             <NavLink className="mr-3 underline" to="/addshop">AddShop</NavLink>
             <NavLink className="mr-3 underline" to="/login">Login</NavLink>
             <NavLink className="mr-3 underline" to="/register">Register</NavLink>
+            <NavLink className="mr-3 underline" to="/userDetails">User</NavLink>
 
             
         </div>
